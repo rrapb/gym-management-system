@@ -59,7 +59,7 @@
                             <td th:text="${toolDetail.getId()}" />
                             <td th:text="${toolDetail.getName()}" />
                             <td th:text="${toolDetail.getValue()}" />
-                            <td th:text="${toolDetail.getTool().getName()}" />
+                            <td th:text="${toolDetail.getToolName()}" />
                             <td>
                                 <a th:href="@{|/editToolDetail/${toolDetail.getId()}|}" class="btn btn-dark btn-circle">
                                     <i class="fas fa-wrench"></i>

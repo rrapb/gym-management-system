@@ -4,7 +4,7 @@
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Plan Programs</h1>
-        <button class="d-none d-sm-inline-block btn btn-sm btn-dark shadow-sm" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-download fa-sm text-white-50"></i> Generate Plan Program</button>
+        <button class="d-none d-sm-inline-block btn btn-sm btn-dark shadow-sm" data-toggle="modal" data-target="#exampleModal"  th:if="${anyPerson != null && anyPerson}" type="hidden"><i class="fas fa-download fa-sm text-white-50"></i> Generate Plan Program</button>
     </div>
 
     <!-- Modal -->
@@ -88,8 +88,8 @@
                         <tr th:each="planProgram : ${planPrograms}">
                             <td th:text="${planProgram.getId()}" />
                             <td th:text="${planProgram.getDay()}" />
-                            <td th:text="${planProgram.getPerson().getFirstName() + ' ' + planProgram.getPerson().getLastName()}" />
-                            <td th:text="${planProgram.getCategory().getName()}" />
+                            <td th:text="${planProgram.getPersonFullName()}" />
+                            <td th:text="${planProgram.getCategoryName()}" />
                             <td th:text="${planProgram.isEnabled} ? Enabled : Disabled"/>
                             <td>
                                 <a th:href="@{|/editPlanProgram/${planProgram.getId()}|}" class="btn btn-dark btn-circle">

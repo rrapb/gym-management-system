@@ -4,7 +4,6 @@
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Users</h1>
-            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
         </div>
 
         <!-- Content Row -->
@@ -66,11 +65,11 @@
                             <tbody>
                                 <tr th:each="user : ${users}">
                                     <td th:text="${user.getId()}" />
-                                    <td th:text="${user.getPerson().getFirstName()}" />
-                                    <td th:text="${user.getPerson().getLastName()}" />
+                                    <td th:text="${user.getFirstName()}" />
+                                    <td th:text="${user.getLastName()}" />
                                     <td th:text="${user.getUsername()}" />
                                     <td th:text="${user.getEmail()}" />
-                                    <td th:text="${user.getRole().getName()}" />
+                                    <td th:text="${user.getRoleName()}" />
                                     <td>
                                         <a th:href="@{|/editUser/${user.getId()}|}" class="btn btn-dark btn-circle">
                                             <i class="fas fa-wrench"></i>

@@ -65,7 +65,7 @@
                             <td th:text="${tool.getId()}" />
                             <td th:text="${tool.getName()}" />
                             <td th:text="${tool.getDescription()}" />
-                            <td th:text="${tool.getCategory().getName()}" />
+                            <td th:text="${tool.getCategoryName()}" />
                             <td th:text="${tool.isEnabled} ? Enabled : Disabled"/>
                             <td>
                                 <a th:href="@{|/editTool/${tool.getId()}|}" class="btn btn-dark btn-circle">
