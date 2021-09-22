@@ -27,6 +27,9 @@ public interface IdentityService {
 	@GetMapping("/persons/enabled")
 	ResponseEntity<List<PersonDTO>> enabledPersons();
 
+	@GetMapping("/persons/disabled")
+	ResponseEntity<List<PersonDTO>> disabledPersons();
+
 	@GetMapping("/persons/enabledWithoutUsers")
 	ResponseEntity<List<PersonDTO>> enabledWithoutUsers();
 
@@ -60,6 +63,9 @@ public interface IdentityService {
 	@GetMapping("/roles/enabled")
 	ResponseEntity<List<RoleDTO>> enabledRoles();
 
+	@GetMapping("/roles/disabled")
+	ResponseEntity<List<RoleDTO>> disabledRoles();
+
 	@GetMapping(value = "/roles/id/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
 	ResponseEntity<RoleDTO> getRoleById(@PathVariable Long id);
 
@@ -83,6 +89,9 @@ public interface IdentityService {
 
 	@GetMapping("/users/enabled")
 	ResponseEntity<List<UserDTO>> enabledUsers();
+
+	@GetMapping("/users/disabled")
+	ResponseEntity<List<UserDTO>> disabledUsers();
 
 	@GetMapping(value = "/users/id/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
 	ResponseEntity<UserDTO> getUserById(@PathVariable Long id);

@@ -26,6 +26,9 @@ public interface WorkoutService {
 	@GetMapping("/categories/enabled")
 	ResponseEntity<List<CategoryDTO>> enabledCategories();
 
+	@GetMapping("/categories/disabled")
+	ResponseEntity<List<CategoryDTO>> disabledCategories();
+
 	@GetMapping(value = "/categories/id/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
 	ResponseEntity<CategoryDTO> getCategoryById(@PathVariable Long id);
 
@@ -49,6 +52,9 @@ public interface WorkoutService {
 
 	@GetMapping("/tools/enabled")
 	ResponseEntity<List<ToolDTO>> enabledTools();
+
+	@GetMapping("/tools/disabled")
+	ResponseEntity<List<ToolDTO>> disabledTools();
 
 	@GetMapping(value = "/tools/id/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
 	ResponseEntity<ToolDTO> getToolById(@PathVariable Long id);
@@ -88,6 +94,12 @@ public interface WorkoutService {
 
 	@GetMapping("/planPrograms/all")
 	ResponseEntity<List<PlanProgramDTO>> planPrograms();
+
+	@GetMapping("/planPrograms/enabled")
+	ResponseEntity<List<PlanProgramDTO>> enabledPlanPrograms();
+
+	@GetMapping("/planPrograms/disabled")
+	ResponseEntity<List<PlanProgramDTO>> disabledPlanPrograms();
 
 	@GetMapping("/planPrograms/persons")
 	ResponseEntity<List<Long>> personsWithEnabledPlanProgram();
